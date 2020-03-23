@@ -2,21 +2,21 @@
   Layout = "_Layout";
 }
 
-@model ToDoList.Models.Item
+@model UniversityRegistrar.Models.Course
 
 <h4>Add a new task</h4>
 
 @using (Html.BeginForm())
 {
-    @Html.LabelFor(model => model.Description)
-    @Html.TextBoxFor(model => model.Description)<br>
+    @Html.LabelFor(model => model.CourseName)
+    @Html.TextBoxFor(model => model.CourseName)<br>
 
-    @Html.LabelFor(model => model.Date)
-    @Html.TextBoxFor(model => model.Date)<br>
+    @Html.LabelFor(model => model.CourseNumber)
+    @Html.TextBoxFor(model => model.CourseNumber)<br>
 
-    @Html.Label("Select category")
-    @Html.DropDownList("CategoryId")<br>
+    @Html.Label("Select student")
+    @Html.DropDownList("StudentId")<br>
 
-    <input type="submit" value="Add new item" />
+    <input type="submit" value="Add new Course" />
 }
-<p>@Html.ActionLink("Show all items", "Index")</p>
+<p>@Html.ActionLink("Show all Courses", "Index")</p>

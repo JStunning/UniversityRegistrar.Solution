@@ -2,25 +2,25 @@
     Layout = "_Layout";
 }
 
-@using ToDoList.Models;
-@model List<ToDoList.Models.Item>;
+@using UniversityRegistrar.Models;
+@model List<UniversityRegistrar.Models.Course>;
 
-<h2>Items</h2>
+<h2>Courses</h2>
 
 @if (Model.Count == 0)
 {
-    <h3>No Items have been added yet!</h3>
+    <h3>No Courses have been added yet!</h3>
 }
 
-@foreach (Item item in Model)
+@foreach (Course course in Model)
 {
     <li>
-        @Html.ActionLink($"{ item.Description }", "Details", new { id = item.ItemId })
+        @Html.ActionLink($"{ course.CourseName }", "Details", new { id = course.CourseId })
     </li>
-    <p class="itemIndexP">Description: @item.Description</p>
-    <p class="itemIndexP">Date: @item.Date</p>
+    <p class="courseIndexP">Name: @course.CourseName</p>
+    <p class="courseIndexP">Number: @course.CourseNumber</p>
 }
 
-<p>@Html.ActionLink("Add new Item", "Create")</p>
-<p>@Html.ActionLink("Back to Categories", "Index", "Categories")</p>
+<p>@Html.ActionLink("Add new Course", "Create")</p>
+<p>@Html.ActionLink("Back to Students", "Index", "Students")</p>
 <p>@Html.ActionLink("Home", "Index", "Home")</p>

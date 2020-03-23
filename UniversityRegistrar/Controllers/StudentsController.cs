@@ -39,15 +39,15 @@ namespace UniversityRegistrar.Controllers
     public ActionResult Details(int id)
     {
         var thisStudent = _db.Students
-            .Include(student => student.Items)
-            .ThenInclude(join => join.Item)
+            .Include(student => student.Courses)
+            .ThenInclude(join => join.Course)
             .FirstOrDefault(student => student.StudentId == id);
         return View(thisStudent);
     }
 
     public ActionResult Delete(int id)
     {
-        var thisStudent = _db.Students.FirstOrDefault(categories => categories.StudentId == id);
+        var thisStudent = _db.Students.FirstOrDefault(students => students.StudentId == id);
         return View(thisStudent);
     }
 

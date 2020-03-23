@@ -6,8 +6,12 @@ h1, h2 {
   text-decoration: underline;
 }
 
-.itemIndexP {
+input {
   margin-bottom: 2%;
+}
+
+.itemIndexP {
+  margin-bottom: 1%;
 }
 
 #mark:active {

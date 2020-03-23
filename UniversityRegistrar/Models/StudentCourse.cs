@@ -4,12 +4,12 @@ using MySql.Data.MySqlClient;
 
 namespace UniversityRegistrar.Models
 {
-  public class CategoryCourse
+  public class StudentCourse
     {       
-        public int CategoryCourseId { get; set; }
+        public int StudentCourseId { get; set; }
         public int CourseId { get; set; }
-        public int CategoryId { get; set; }
+        public int StudentId { get; set; }
         public Course Course { get; set; }
-        public Category Category { get; set; }
+        public Student Student { get; set; }
     }
 }

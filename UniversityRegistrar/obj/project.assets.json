@@ -12168,11 +12168,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Stunning\\Desktop\\epicodusProjects\\c#\\ToDoList.Solution\\ToDoList\\ProjectName.csproj",
-      "projectName": "ProjectName",
-      "projectPath": "C:\\Users\\Stunning\\Desktop\\epicodusProjects\\c#\\ToDoList.Solution\\ToDoList\\ProjectName.csproj",
+      "projectUniqueName": "C:\\Users\\Stunning\\Desktop\\epicodusProjects\\c#\\UniversityRegistrar.Solution\\UniversityRegistrar\\UniversityRegistrar.csproj",
+      "projectName": "UniversityRegistrar",
+      "projectPath": "C:\\Users\\Stunning\\Desktop\\epicodusProjects\\c#\\UniversityRegistrar.Solution\\UniversityRegistrar\\UniversityRegistrar.csproj",
       "packagesPath": "C:\\Users\\Stunning\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Stunning\\Desktop\\epicodusProjects\\c#\\ToDoList.Solution\\ToDoList\\obj\\",
+      "outputPath": "C:\\Users\\Stunning\\Desktop\\epicodusProjects\\c#\\UniversityRegistrar.Solution\\UniversityRegistrar\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
