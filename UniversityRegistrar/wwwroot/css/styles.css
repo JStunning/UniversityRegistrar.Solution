@@ -1,0 +1,16 @@
+li {
+  margin-bottom: 2%;
+}
+
+h1, h2 {
+  text-decoration: underline;
+}
+
+.itemIndexP {
+  margin-bottom: 2%;
+}
+
+#mark:active {
+  color: red;
+  text-decoration: none;
+}
