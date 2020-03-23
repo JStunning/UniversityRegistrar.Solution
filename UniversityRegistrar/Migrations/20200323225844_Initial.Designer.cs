@@ -8,7 +8,7 @@ using UniversityRegistrar.Models;
 namespace UniversityRegistrar.Migrations
 {
     [DbContext(typeof(UniversityRegistrarContext))]
-    [Migration("20200323213158_Initial")]
+    [Migration("20200323225844_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -30,6 +30,26 @@ namespace UniversityRegistrar.Migrations
                     b.HasKey("CourseId");
 
                     b.ToTable("Courses");
+                });
+
+            modelBuilder.Entity("UniversityRegistrar.Models.Department", b =>
+                {
+                    b.Property<int>("DepartmentId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("CourseId");
+
+                    b.Property<string>("Major");
+
+                    b.Property<int>("StudentId");
+
+                    b.HasKey("DepartmentId");
+
+                    b.HasIndex("CourseId");
+
+                    b.HasIndex("StudentId");
+
+                    b.ToTable("Departments");
                 });
 
             modelBuilder.Entity("UniversityRegistrar.Models.Student", b =>
@@ -62,6 +82,19 @@ namespace UniversityRegistrar.Migrations
                     b.HasIndex("StudentId");
 
                     b.ToTable("StudentCourse");
+                });
+
+            modelBuilder.Entity("UniversityRegistrar.Models.Department", b =>
+                {
+                    b.HasOne("UniversityRegistrar.Models.Course", "Course")
+                        .WithMany()
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("UniversityRegistrar.Models.Student", "Student")
+                        .WithMany("Departments")
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("UniversityRegistrar.Models.StudentCourse", b =>

@@ -21,8 +21,17 @@ else
     <li id="mark">@join.Course.CourseName</li>
   }
   </ul>
+
+  <h4>Student Major:</h4>
+  <ul>
+  @foreach(var join in Model.Departments)
+  {
+    <li id="mark">@join.Major</li>
+  }
+  </ul>
 }
 
+<p>@Html.ActionLink("Set Major", "Index", "Departments")</p>
 <p>@Html.ActionLink("Back to Students", "Index")</p>
 <p>@Html.ActionLink("Edit Student", "Edit", new { id = Model.StudentId })</p>
 <p>@Html.ActionLink("Delete Student", "Delete", new { id = Model.StudentId })</p>

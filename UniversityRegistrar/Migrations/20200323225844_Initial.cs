@@ -36,6 +36,33 @@ namespace UniversityRegistrar.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Departments",
+                columns: table => new
+                {
+                    DepartmentId = table.Column<int>(nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Major = table.Column<string>(nullable: true),
+                    StudentId = table.Column<int>(nullable: false),
+                    CourseId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Departments", x => x.DepartmentId);
+                    table.ForeignKey(
+                        name: "FK_Departments_Courses_CourseId",
+                        column: x => x.CourseId,
+                        principalTable: "Courses",
+                        principalColumn: "CourseId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Departments_Students_StudentId",
+                        column: x => x.StudentId,
+                        principalTable: "Students",
+                        principalColumn: "StudentId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "StudentCourse",
                 columns: table => new
                 {
@@ -62,6 +89,16 @@ namespace UniversityRegistrar.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_Departments_CourseId",
+                table: "Departments",
+                column: "CourseId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Departments_StudentId",
+                table: "Departments",
+                column: "StudentId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_StudentCourse_CourseId",
                 table: "StudentCourse",
                 column: "CourseId");
@@ -74,6 +111,9 @@ namespace UniversityRegistrar.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Departments");
+
             migrationBuilder.DropTable(
                 name: "StudentCourse");
 

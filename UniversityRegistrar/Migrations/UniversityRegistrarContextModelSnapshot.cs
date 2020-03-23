@@ -30,6 +30,26 @@ namespace UniversityRegistrar.Migrations
                     b.ToTable("Courses");
                 });
 
+            modelBuilder.Entity("UniversityRegistrar.Models.Department", b =>
+                {
+                    b.Property<int>("DepartmentId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("CourseId");
+
+                    b.Property<string>("Major");
+
+                    b.Property<int>("StudentId");
+
+                    b.HasKey("DepartmentId");
+
+                    b.HasIndex("CourseId");
+
+                    b.HasIndex("StudentId");
+
+                    b.ToTable("Departments");
+                });
+
             modelBuilder.Entity("UniversityRegistrar.Models.Student", b =>
                 {
                     b.Property<int>("StudentId")
@@ -60,6 +80,19 @@ namespace UniversityRegistrar.Migrations
                     b.HasIndex("StudentId");
 
                     b.ToTable("StudentCourse");
+                });
+
+            modelBuilder.Entity("UniversityRegistrar.Models.Department", b =>
+                {
+                    b.HasOne("UniversityRegistrar.Models.Course", "Course")
+                        .WithMany()
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("UniversityRegistrar.Models.Student", "Student")
+                        .WithMany("Departments")
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("UniversityRegistrar.Models.StudentCourse", b =>

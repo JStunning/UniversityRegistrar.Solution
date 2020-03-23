@@ -6,6 +6,7 @@ namespace UniversityRegistrar.Models
   {
     public virtual DbSet<Student> Students { get; set; }
     public DbSet<Course> Courses { get; set; }
+    public DbSet<Department> Departments {get; set;}
     public DbSet<StudentCourse> StudentCourse { get; set; }
 
     public UniversityRegistrarContext(DbContextOptions options) : base(options) { }

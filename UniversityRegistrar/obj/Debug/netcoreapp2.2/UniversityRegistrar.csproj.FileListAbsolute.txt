@@ -32,3 +32,6 @@ C:\Users\Stunning\Desktop\epicodusProjects\c#\UniversityRegistrar.Solution\Unive
 C:\Users\Stunning\Desktop\epicodusProjects\c#\UniversityRegistrar.Solution\UniversityRegistrar\bin\Debug\netcoreapp2.2\UniversityRegistrar.Views.pdb
 C:\Users\Stunning\Desktop\epicodusProjects\c#\UniversityRegistrar.Solution\UniversityRegistrar\obj\Debug\netcoreapp2.2\UniversityRegistrar.Views.pdb
 C:\Users\Stunning\Desktop\epicodusProjects\c#\UniversityRegistrar.Solution\UniversityRegistrar\obj\Debug\netcoreapp2.2\UniversityRegistrar.csproj.CopyComplete
+C:\Users\Stunning\Desktop\epicodusProjects\c#\UniversityRegistrar.Solution\UniversityRegistrar\obj\Debug\netcoreapp2.2\Razor\Views\Departments\Create.g.cshtml.cs
+C:\Users\Stunning\Desktop\epicodusProjects\c#\UniversityRegistrar.Solution\UniversityRegistrar\obj\Debug\netcoreapp2.2\Razor\Views\Departments\Details.g.cshtml.cs
+C:\Users\Stunning\Desktop\epicodusProjects\c#\UniversityRegistrar.Solution\UniversityRegistrar\obj\Debug\netcoreapp2.2\Razor\Views\Departments\Index.g.cshtml.cs
